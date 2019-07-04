@@ -8,4 +8,4 @@ def test_arithmetic_operators():
     """Arithmetic operators"""
 
     #Addiction
-    assert 5 + 3 = 8
+    assert 5 + 3 == 8

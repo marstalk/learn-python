@@ -120,4 +120,9 @@ def test_function_definition():
 
     greet_with_closure = compose_greet_func_with_closure('John')
 
-    assert greet_with_closure() == 'Hello there, John!'
+    assert greet_with_closure() == 'Hello there, John! '
+
+
+def test_hello():
+    assert 1==2
+    return str(name) + str(number)
