@@ -16,17 +16,17 @@ class BST:
     """
     binary search tree
     """
-    def convert_to_bst(self, list):
+    def convert_to_bst(self, arrs):
         """
         convert list to binary search tree
         """
-        if not list:
+        if not arrs:
             return None
-        list.sort()
-        middle_index = len(list) // 2
-        root = TreeNode(list[middle_index])
-        root.left = self.convert_to_bst(list[:middle_index])
-        root.right = self.convert_to_bst(list[middle_index +1 : ])
+        arrs.sort()
+        middle_index = len(arrs) // 2
+        root = TreeNode(arrs[middle_index])
+        root.left = self.convert_to_bst(arrs[:middle_index])
+        root.right = self.convert_to_bst(arrs[middle_index +1 : ])
         return root
 
 
@@ -54,16 +54,16 @@ class BST:
         root.right = self.insert(root.right, value)
 
 
-    def convert_to_list(self, root, list):
+    def convert_to_list(self, root, arrs):
         """
         convert bst to list
         """
         if not root:
             return
-        self.convert_to_list(root.left, list)
-        list.append(root.value)
-        self.convert_to_list(root.right, list)
-        return list
+        self.convert_to_list(root.left, arrs)
+        arrs.append(root.value)
+        self.convert_to_list(root.right, arrs)
+        return arrs
 
 
 def test_bst():
